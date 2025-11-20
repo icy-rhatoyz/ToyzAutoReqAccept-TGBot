@@ -19,7 +19,7 @@ class Config(object):
     OWNER = int(os.environ.get('OWNER', '')) # ⚠️ Required
     LOG_CHANNEL = int(os.environ.get("LOG_CHANNEL", "")) # ⚠️ Required
     APPROVED_WELCOME_TEXT = os.environ.get("APPROVED_WELCOME_TEXT", "Hello {mention}\nWelcome To {title}\n\nYou're Auto Approved. ✅")
-    LEAVING_BY_TEXT = os.environ.get("APPROVED_WELCOME_TEXT", "👋 Bye {mention} !\nSee You Soon by {title}\n\nYou Left. ⛔")
+    LEAVING_BY_TEXT = os.environ.get("LEAVING_BY_TEXT", "👋 Bye {mention}!\nSee You Soon in {title}\n\nYou Left. ⛔")
     FORCE_SUB = os.environ.get('FORCE_SUB', '') # ⚠️ Required
     AUTH_CHANNEL = int(FORCE_SUB) if FORCE_SUB and id_pattern.search(
     FORCE_SUB) else None 
