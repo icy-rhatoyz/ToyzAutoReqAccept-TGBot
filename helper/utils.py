@@ -36,8 +36,24 @@ async def is_subscribed(bot, query):
 
 async def force_sub(bot, cmd):
     invite_link = await bot.create_chat_invite_link(int(Config.AUTH_CHANNEL))
-    buttons = [[InlineKeyboardButton(
-        text="📢 Cont. Owner to add you in Channel 📢", url="https://t.me/V_Ditu")]]
-    text = "**Sᴏʀʀy Dᴜᴅᴇ Yᴏᴜ'ʀᴇ Nᴏᴛ Jᴏɪɴᴇᴅ My Cʜᴀɴɴᴇʟ 😐. Sᴏ Pʟᴇᴀꜱᴇ Jᴏɪɴ Oᴜʀ Uᴩᴅᴀᴛᴇ Cʜᴀɴɴᴇʟ Tᴏ Cᴄᴏɴᴛɪɴᴜᴇ**"
 
-    return await cmd.reply_text(text=text, reply_markup=InlineKeyboardMarkup(buttons))
+    buttons = [
+        [
+            InlineKeyboardButton(
+                text="📢 Join DowWizMastery Channel",
+                url="https://t.me/+G582gimLaYM0NmY8"
+            )
+        ]
+    ]
+
+    text = (
+        "**You haven’t joined our official channel yet.**\n\n"
+        "To continue using the bot, please join the DowWizMastery Hub — "
+        "this is where all premium updates and important alerts are shared.\n\n"
+        "**Join using the button below, then return here to continue.**"
+    )
+
+    return await cmd.reply_text(
+        text=text,
+        reply_markup=InlineKeyboardMarkup(buttons)
+    )
